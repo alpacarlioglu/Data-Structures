@@ -24,3 +24,8 @@ void BasaEkle(int basa)
     basaGelecek -> next = start;
     start = basaGelecek;
 }
+
+int main()
+{
+    return 0;
+}

@@ -36,3 +36,8 @@ void ArayaEkle(int x, int y)
     q -> next = arayaEklenecek;
     arayaEklenecek -> next = onune;
 }
+
+int main()
+{
+    return 0;
+}

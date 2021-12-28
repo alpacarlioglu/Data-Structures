@@ -23,5 +23,4 @@ int main()
     secondNode -> next = NULL;
 
     printf("%d => %d", firstNode -> data, secondNode -> data); 
-    
 }
