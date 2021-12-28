@@ -13,4 +13,17 @@ struct node
 struct node *start = NULL;
 struct node *temp = NULL;
 struct node *q = NULL;
-fdgfdg
+struct node *prev = NULL;
+void TersCevir()
+{
+    q = start;
+
+    while (q != NULL)
+    {
+        temp = q -> next;
+        q -> next = prev;
+        prev = q;
+        q = temp;
+    }
+    
+}

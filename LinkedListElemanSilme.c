@@ -48,7 +48,7 @@ SondanSil()
         {
             q = q -> next;
         }
-        free(q -> next); // Sondaki dugum bosaltilir
-        q -> next = NULL; 
+        free(q -> next); // aSondaki dugum bosaltilir
+        q -> next = NULL;
     }
 }
