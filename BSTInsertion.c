@@ -4,16 +4,16 @@
 struct node 
 {
     int data;
-    struct node *left, *right;
+    struct node *left, *right; // Sag ve sol cocugu isaret eden pointerlar
 };
 
-struct node *root = NULL;
+struct node *root = NULL; // Kok olusturuldu
 
-struct node *newNode(int key)
+struct node *NewNode(int key) // Parametre gonderildiginde dugum olusturulcak
 {
-    struct node *temp = (struct node*)malloc(sizeof(struct node));
+    struct node *temp = (struct node*)malloc(sizeof(struct node)); // Yeni eklenen dugumu ifade edecek
     temp -> data = key;
-    temp -> right = NULL;
+    temp -> right = NULL; // Ilk eklenenin sagi ve solu bos olur
     temp -> left = NULL;
 
     if (root == NULL)
@@ -25,24 +25,78 @@ void InOrder(struct node *root)
 {
     if(root != NULL)
     {
-        InOrder(root -> left);
-        printf("%d", root -> data);
+        InOrder(root -> left); // Recursive
+        printf("%d ", root -> data);
         InOrder(root -> right);
     }
 }
 
-struct node *ekle(struct node *node, int key)
+struct node *Ekle(struct node *node, int key) 
 {
-    if(node == NULL)
-        return newNode(key);
-    if(key < node -> data)
-        node -> left = ekle(node -> left, key);
+    if(node == NULL) // Eklecek olan bos olmali
+        return NewNode(key);
+    if(key < node -> data)   // Yerlestirme icin karsilastirma yapiliyor
+        node -> left = Ekle(node -> left, key);
     else if(key > node -> data)
-        node -> right = ekle(node -> right, key);
+        node -> right = Ekle(node -> right, key);
     return node;
+};
+
+struct node *Search(int aranan)
+{
+    struct node *current;
+    current = root;
+
+    while (current -> data != aranan)
+    {
+        if(current != NULL)
+        {
+            printf("%d", current -> data);
+            if (aranan < current -> data)
+                current = current -> left;
+            else
+                current = current ->right;
+        }
+        if(current == NULL)
+        {   printf("Aradiginiz sayi aracta yok");   
+            return NULL;
+        }     
+    }
+    printf("%d", current -> data);
+    return current;
 };
 
 int main()
 {
+    int input;
+
+    while(1 == 1)
+    {
+        printf("\n1- Sayi ekle\n");
+        printf("2- Inorder traversal...\n");
+        printf("3- Arama yap\n");
+        scanf("%d", &input);
+
+        switch (input)
+        {
+        case 1:
+            printf("Girmek istediginiz sayi ?\n");
+            scanf("%d", &input);
+            if (root == NULL)
+                root = Ekle(root, input);
+            Ekle(root, input);
+            break;
+        case 2:
+            InOrder(root);
+            break;
+        case 3:
+            printf("Hangi sayiyi aramak istiyorsunuz ?\n");
+            scanf("%d ", &input);
+            Search(input);
+            break; 
+        default:
+            break;
+        }
+    }
     return 0;
 }
