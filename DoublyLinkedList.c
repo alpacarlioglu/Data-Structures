@@ -19,7 +19,7 @@ struct node * DugumOlustur(int veri) // Dugum olusturma fonksiyonu
     return yeniDugum;
 }
 
-void SonaEkle(int veri)
+void sonaEkle(int veri)
 {
     struct node *sonaEklenecek = DugumOlustur(veri);
     if (start = NULL)
@@ -35,7 +35,7 @@ void SonaEkle(int veri)
     }
 }
 
-void Yazdir()
+void yazdir()
 {
     temp = start;
     
@@ -46,7 +46,7 @@ void Yazdir()
     }
 }
 
-void BasaEkle(int veri)
+void basaEkle(int veri)
 {
     struct node * basaEklenecek = DugumOlustur(veri);
     if (start == NULL)
@@ -59,7 +59,7 @@ void BasaEkle(int veri)
     start = basaEklenecek;
 }
 
-void ArayaEkle(int kiminOnune, int eklenecek)
+void arayaEkle(int kiminOnune, int eklenecek)
 {
     temp = start;
     struct node *arayaEklenecek = DugumOlustur(eklenecek);
@@ -68,7 +68,7 @@ void ArayaEkle(int kiminOnune, int eklenecek)
     if(start == NULL)
         start = arayaEklenecek;
     else if(start -> data == kiminOnune)
-            BasaEkle(eklenecek);
+            basaEkle(eklenecek);
     else
     {
         while (temp -> next != NULL)
@@ -87,7 +87,7 @@ void ArayaEkle(int kiminOnune, int eklenecek)
     }
 }
 
-void BastanSil()
+void bastanSil()
 {
     if (start == NULL)
     {
@@ -110,7 +110,7 @@ void SondanSil()
 {
     if (start -> next == NULL)
     {
-        BastanSil();
+        bastanSil();
         return;
     }
     
@@ -123,7 +123,7 @@ void SondanSil()
     onceki -> next = NULL;
 }
 
-void AradanSil(int silenecek)
+void aradanSil(int silenecek)
 {
     // Traverse
     temp = start;
@@ -162,24 +162,24 @@ int main()
         case 1:
             printf("Sona eklemek istediginiz elemani girin ...\n");
             scanf("%d", &sayi);
-            SonaEkle(sayi);
-            Yazdir();
+            sonaEkle(sayi);
+            yazdir();
             break;
         case 2:
             printf("Basa eklemek istediginiz elemani girin ...\n");
             scanf("%d", &sayi);
-            SonaEkle(sayi);
-            Yazdir();
+            sonaEkle(sayi);
+            yazdir();
             break;
         case 3:
             printf("Araya eklemek istediginiz elemani girin ...\n");
             scanf("%d", &sayi);
-            ArayaEkle(sayi1, sayi);
-            Yazdir();
+            arayaEkle(sayi1, sayi);
+            yazdir();
             break;
         case 4:
-            BastanSil();
-            Yazdir();
+            bastanSil();
+            yazdir();
             break;
         case 5:
             SondanSil();
@@ -188,8 +188,8 @@ int main()
         case 6:
             printf("Silinmesini istedigin elemani gir\n");
             scanf("%d", &sayi);
-            AradanSil(sayi);
-            Yazdir();
+            aradanSil(sayi);
+            yazdir();
             break;
         default:
             break;

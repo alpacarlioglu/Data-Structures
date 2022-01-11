@@ -21,7 +21,7 @@ void DugumOlustur(int dugum)
     struct node *dugum = (struct node*)malloc(sizeof(struct node));
 }
 
-void ArayaEkle(int x, int y)
+void arayaEkle(int x, int y)
 {
     struct node *arayaEklenecek = (struct node*)malloc(sizeof(struct node));
     arayaEklenecek -> data  = y;

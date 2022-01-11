@@ -16,7 +16,7 @@ struct node
 struct node *start = NULL;
 struct node *temp = NULL;
 
-void BasaEkle(int basa)
+void basaEkle(int basa)
 {
     struct node *basaGelecek = (struct node*)malloc(sizeof(struct node));
 

@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int Faktoriyel(int sayi)
+int faktoriyel(int sayi)
 {   
     if (sayi == 0) 
         return 1;
-    return sayi * Faktoriyel(sayi -1); // 0 Olana kadar surekli kendini cagiriyor
+    return sayi * faktoriyel(sayi -1); // 0 Olana kadar surekli kendini cagiriyor
 }
 
 int main()
@@ -15,7 +15,7 @@ int main()
         int input;
         printf("Sayi giriniz\n");
         scanf("%d", &input);
-        int fakt = Faktoriyel(input);
+        int fakt = faktoriyel(input);
         printf("%d\n", fakt);        
     }
 }

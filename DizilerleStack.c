@@ -10,7 +10,7 @@
 #define BOYUT 5 
 int dizi [BOYUT], top; // Stack yapimizi dizide tutmak icin dizi olusturuyoruz, Top degeri program basladiginda daima -1 atanacak
 
-void Push(int data) 
+void push(int data) 
 {
     if(top + 1 == BOYUT) // Stack veri yapimiz dolu mu diye kontrol yapiyoruz
         printf("Stack dolu.");
@@ -21,7 +21,7 @@ void Push(int data)
     }
 }
 
-void Pop()
+void pop()
 {
     if(top == -1)
         printf("Stack zaten dolu.");
@@ -29,7 +29,7 @@ void Pop()
         top -= 1; // Stackten eleman cikarma
 }
 
-int Peek()
+int peek()
 {
     return dizi[top]; // Stackten deger dondurur (En ustteki degeri)
 }

@@ -11,7 +11,7 @@ struct node *start = NULL;
 struct node *temp = NULL;
 struct node *q = NULL;
 
-void BastanSil()
+void bastanSil()
 {
     struct node *ikinci = (struct node*)malloc(sizeof(struct node)); 
     ikinci = start -> next; // ikinciye birinci degeri atadiktan sonra ve birinciyi free komutuyla bosalttiktan sonra ikinci deger birinci deger olur.
@@ -19,10 +19,10 @@ void BastanSil()
     start = ikinci;
 }
 
-void AradanSil(int x) // Silinecek dugumden onceki dugum bulunur ve onceki dugum sonraki dugumu gosterir
+void aradanSil(int x) // Silinecek dugumden onceki dugum bulunur ve onceki dugum sonraki dugumu gosterir
 {
     if(start -> data == x)
-        BastanSil();
+        bastanSil();
     struct node *onceki = NULL;
     struct node *sonraki = NULL;
 

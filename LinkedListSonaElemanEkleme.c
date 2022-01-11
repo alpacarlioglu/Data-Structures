@@ -11,7 +11,7 @@ struct node
 struct node *start = NULL;
 struct node *temp = NULL;
 
-void SonaEkle(int veri)
+void sonaEkle(int veri)
 {
     struct node *eklenecek = (struct node*)malloc(sizeof(struct node)); // Dugum olusturma
     eklenecek -> data = veri;
@@ -33,7 +33,7 @@ void SonaEkle(int veri)
     }
 }
 
-void Yazdir()
+void yazdir()
 {
     temp = start;
     while (temp -> next != NULL)

@@ -14,7 +14,7 @@ struct node *start = NULL;
 struct node *temp = NULL;
 struct node *q = NULL;
 struct node *prev = NULL;
-void TersCevir()
+void tersCevir()
 {
     q = start;
 

@@ -5,7 +5,7 @@
 
 int kuyruk[BOYUT], front = -1, rear = -1; // Kuyruk veri yapisini dizide tutuyoruz, front en ondekini rear en arkadaki elemani tutar
 
-void Enqueue(int veri)
+void enqueue(int veri)
 {
     if(rear == BOYUT) // Dizi dolmus mu ?
         printf("Kuyruk dolu."); // Overflow
@@ -18,7 +18,7 @@ void Enqueue(int veri)
     }
 }
 
-void Dequeue() // Eleman cikarma
+void dequeue() // Eleman cikarma
 {
     if(front == 1 || front > rear)
     {

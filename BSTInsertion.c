@@ -9,7 +9,7 @@ struct node
 
 struct node *root = NULL; // Kok olusturuldu
 
-struct node *NewNode(int key) // Parametre gonderildiginde dugum olusturulcak
+struct node *newNode(int key) // Parametre gonderildiginde dugum olusturulcak
 {
     struct node *temp = (struct node*)malloc(sizeof(struct node)); // Yeni eklenen dugumu ifade edecek
     temp -> data = key;
@@ -21,28 +21,28 @@ struct node *NewNode(int key) // Parametre gonderildiginde dugum olusturulcak
     return temp;
 };
 
-void InOrder(struct node *root)
+void inOrder(struct node *root)
 {
     if(root != NULL)
     {
-        InOrder(root -> left); // Recursive
+        inOrder(root -> left); // Recursive
         printf("%d ", root -> data);
-        InOrder(root -> right);
+        inOrder(root -> right);
     }
 }
 
-struct node *Ekle(struct node *node, int key) 
+struct node *ekle(struct node *node, int key) 
 {
     if(node == NULL) // Eklecek olan bos olmali
-        return NewNode(key);
+        return newNode(key);
     if(key < node -> data)   // Yerlestirme icin karsilastirma yapiliyor
-        node -> left = Ekle(node -> left, key);
+        node -> left = ekle(node -> left, key);
     else if(key > node -> data)
-        node -> right = Ekle(node -> right, key);
+        node -> right = ekle(node -> right, key);
     return node;
 };
 
-struct node *Search(int aranan)
+struct node *search(int aranan)
 {
     struct node *current;
     current = root;
@@ -83,16 +83,16 @@ int main()
             printf("Girmek istediginiz sayi ?\n");
             scanf("%d", &input);
             if (root == NULL)
-                root = Ekle(root, input);
-            Ekle(root, input);
+                root = ekle(root, input);
+            ekle(root, input);
             break;
         case 2:
-            InOrder(root);
+            inOrder(root);
             break;
         case 3:
             printf("Hangi sayiyi aramak istiyorsunuz ?\n");
             scanf("%d ", &input);
-            Search(input);
+            search(input);
             break; 
         default:
             break;

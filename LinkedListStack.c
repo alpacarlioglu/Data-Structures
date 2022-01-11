@@ -9,7 +9,7 @@ struct node // Dugum yapisi
 
 struct node *top = NULL; // bastaki elemani tutacak dugum
 
-void Push(int veri) // Kendisine gonderilen parametreyi ekleyecek fonksiyon
+void push(int veri) // Kendisine gonderilen parametreyi ekleyecek fonksiyon
 {
     struct node *eklenecek = (struct node*)malloc(sizeof(struct node)); 
     eklenecek -> data = veri;
@@ -20,7 +20,7 @@ void Push(int veri) // Kendisine gonderilen parametreyi ekleyecek fonksiyon
     top = eklenecek;
 }
 
-void Pop()
+void pop()
 {
     if(top -> data == NULL) // Stack bos mu konrol ediyor
         printf("Stack zaten bos.");
@@ -33,7 +33,7 @@ void Pop()
     }
 }
 
-int Peek()
+int peek()
 {
     return top -> data;
 }
